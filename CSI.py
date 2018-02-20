@@ -9,7 +9,7 @@ suspect_characteristics = {}
 
 Eva = {"hair_color": "Brown", "facial_shape": "Oval", "eye_color": "Blue", "gender": "Female", "race": "White"}
 
-Larisa = {"hair_color": "Brown", "facial_shape": "Oval", "eye_color": "Brown", "gender": "Female", "race": "White"}
+Larisa = {"hair_color": "Brown", "facial_shape": "Round", "eye_color": "Green", "gender": "Female", "race": "White"}
 
 Matej = {"hair_color": "Black", "facial_shape": "Oval", "eye_color": "Blue", "gender": "Male", "race": "White"}
 
@@ -18,24 +18,20 @@ Miha = {"hair_color": "Brown", "facial_shape": "Square", "eye_color": "Green", "
 while True:
     start = ""
     while start != "y" and start != "n":
-        start = raw_input("Do you want to compare the DNA? (y/n): ")
+        start = raw_input("Do you want to compare the DNA? (y/n): ").lower()
 
     if start == "n":
         print "Goodbye!"
         break
 
-while True:
-
-    characteristic1 = "hair_color"
-
     if "CCAGCAATCGC" in dna:
-        suspect_characteristics[characteristic1] = "Black"
+        suspect_characteristics["hair_color"] = "Black"
 
     elif "GCCAGTGCCG" in dna:
-        suspect_characteristics[characteristic1] = "Brown"
+        suspect_characteristics["hair_color"] = "Brown"
 
     elif "TTAGCTATCGC" in dna:
-        suspect_characteristics[characteristic1] = "Blonde"
+        suspect_characteristics["hair-color"] = "Blonde"
 
     else:
         print "Nothing found!"
@@ -43,17 +39,15 @@ while True:
     break
 
 while True:
-
-    characteristic2 = "facial_shape"
 
     if "GCCACGG" in dna:
-        suspect_characteristics[characteristic2] = "Square"
+        suspect_characteristics["facial_shape"] = "Square"
 
     elif "ACCACAA" in dna:
-        suspect_characteristics[characteristic2] = "Round"
+        suspect_characteristics["facial_shape"] = "Round"
 
     elif "AGGCCTCA" in dna:
-        suspect_characteristics[characteristic2] = "Oval"
+        suspect_characteristics["facial_shape"] = "Oval"
 
     else:
         print "Nothing found!"
@@ -61,17 +55,15 @@ while True:
     break
 
 while True:
-
-    characteristic3 = "eye_color"
 
     if "TTGTGGTGGC" in dna:
-        suspect_characteristics[characteristic3] = "Blue"
+        suspect_characteristics["eye_color"] = "Blue"
 
     elif "GGGAGGTGGC" in dna:
-        suspect_characteristics[characteristic3] = "Green"
+        suspect_characteristics["eye_color"] = "Green"
 
     elif "AAGTAGTGAC" in dna:
-        suspect_characteristics[characteristic3] = "Brown"
+        suspect_characteristics["eye_color"] = "Brown"
 
     else:
         print "Nothing found!"
@@ -79,14 +71,12 @@ while True:
     break
 
 while True:
-
-    characteristic4 = "gender"
 
     if "TGAAGGACCTTC" in dna:
-        suspect_characteristics[characteristic4] = "Female"
+        suspect_characteristics["gender"] = "Female"
 
     elif "TGCAGGAACTTC" in dna:
-        suspect_characteristics[characteristic4] = "Male"
+        suspect_characteristics["gender"] = "Male"
 
     else:
         print "Nothing found!"
@@ -94,30 +84,33 @@ while True:
     break
 
 while True:
-    characteristic5 = "race"
 
     if "AAAACCTCA" in dna:
-        suspect_characteristics[characteristic5] = "White"
+        suspect_characteristics["race"] = "White"
 
     elif "CGACTACAG" in dna:
-        suspect_characteristics[characteristic5] = "Black"
+        suspect_characteristics["race"] = "Black"
 
     elif "CGCGGGCCG" in dna:
-        suspect_characteristics[characteristic5] = "Asian"
+        suspect_characteristics["race"] = "Asian"
 
     else:
         print "Nothing found!"
 
     break
+
+print "The characteristics of the criminal are: "
+print suspect_characteristics
 
 if suspect_characteristics == Eva:
     print "Eva is the criminal!"
 
 elif suspect_characteristics == Larisa:
-    print "Tim is the criminal!"
+    print "Larisa is the criminal!"
 
 elif suspect_characteristics == Matej:
     print "Matej is the criminal!"
 
 elif suspect_characteristics == Miha:
     print "Miha is the criminal!"
+

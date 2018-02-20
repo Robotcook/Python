@@ -1,0 +1,3 @@
+shower - False
+dress - True
+get up - True
