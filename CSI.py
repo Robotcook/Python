@@ -114,3 +114,5 @@ elif suspect_characteristics == Matej:
 elif suspect_characteristics == Miha:
     print "Miha is the criminal!"
 
+else:
+    print "No match!"

@@ -1,129 +1,20 @@
-DNA_file = "ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA"
 
-profile_dict = {}
+import random
 
-Eva = {
-    "hair_color": "Brown",
-    "facial_shape": "Oval",
-    "eye_color": "Blue",
-    "gender": "Female",
-    "race": "White",
-}
+number_list = []
 
-Larisa = {
-    "hair_color": "Brown",
-    "facial_shape": "Oval",
-    "eye_color": "Brown",
-    "gender": "Female",
-    "race": "White",
-}
+print "Welcome to the Lottery Numbers Generator"
 
-Matej = {
-    "hair_color": "Black",
-    "facial_shape": "Oval",
-    "eye_color": "Blue",
-    "gender": "Male",
-    "race": "White",
-}
+numbers = int(raw_input("Please enter how many random numbers would you like to have: "))
 
-Miha = {
-    "hair_color": "Brown",
-    "facial_shape": "Square",
-    "eye_color": "Green",
-    "gender": "Male",
-    "race": "White",
-}
+for x in range(numbers):
 
-while True:
-    indicator1 = "hair_color"
+    rand_number = random.randint(1, 10)
 
-    if "CCAGCAATCGC" in DNA_file:
-        profile_dict[indicator1] = "Black"
+    while rand_number in number_list:
+        rand_number = random.randint(1, 10)
 
-    elif "GCCAGTGCCG" in DNA_file:
-        profile_dict[indicator1] = "Brown"
+    if rand_number not in number_list:
+        number_list.append(rand_number)
 
-    elif "TTAGCTATCGC" in DNA_file:
-        profile_dict[indicator1] = "Blonde"
-
-    else:
-        print "No match found"
-
-    break
-
-while True:
-    indicator2 = "facial_shape"
-
-    if "GCCACGG" in DNA_file:
-        profile_dict[indicator2] = "Square"
-
-    elif "ACCACAA" in DNA_file:
-        profile_dict[indicator2] = "Round"
-
-    elif "AGGCCTCA" in DNA_file:
-        profile_dict[indicator2] = "Oval"
-
-    else:
-        print "No match found"
-
-    break
-
-while True:
-    indicator3 = "eye_color"
-
-    if "TTGTGGTGGC" in DNA_file:
-        profile_dict[indicator3] = "Blue"
-
-    elif "GGGAGGTGGC" in DNA_file:
-        profile_dict[indicator3] = "Green"
-
-    elif "AAGTAGTGAC" in DNA_file:
-        profile_dict[indicator3] = "Brown"
-
-    else:
-        print "No match found"
-
-    break
-
-while True:
-    indicator4 = "gender"
-
-    if "TGAAGGACCTTC" in DNA_file:
-        profile_dict[indicator4] = "Female"
-
-    elif "TGCAGGAACTTC" in DNA_file:
-        profile_dict[indicator4] = "Male"
-
-    else:
-        print "No match found"
-
-    break
-
-while True:
-    indicator5 = "race"
-
-    if "AAAACCTCA" in DNA_file:
-        profile_dict[indicator5] = "White"
-
-    elif "CGACTACAG" in DNA_file:
-        profile_dict[indicator5] = "Black"
-
-    elif "CGCGGGCCG" in DNA_file:
-        profile_dict[indicator5] = "Asian"
-
-    else:
-        print "No match found"
-
-    break
-
-if profile_dict == Eva:
-    print "Eva is the criminal"
-
-elif profile_dict == Larisa:
-    print "Tim is the criminal"
-
-elif profile_dict == Matej:
-    print "Matej is the criminal"
-
-elif profile_dict == Miha:
-    print "troll is the criminal"
+print number_list
